@@ -24,8 +24,6 @@ export const missionSlice = createSlice({
     join: (state, action) => {
       state.missions.map((elem) => {
         if (elem.mission_id === action.payload) {
-        //   console.log(elem.mission_id === action.payload);
-          // elem.joined = true;
           return { ...elem, joined: true };
         }
         return elem;

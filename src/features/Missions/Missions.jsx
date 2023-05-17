@@ -25,8 +25,20 @@ function Missions() {
             missions.map((elem) => (
               <tr key={elem.mission_id}>
                 <td>{elem.mission_name}</td>
-                <td>{elem.mission_description}</td>
-                <td>{elem.joined}</td>
+                <td>
+                  {' '}
+                  <p>
+                    {' '}
+                    {elem.mission_description}
+                    {' '}
+                  </p>
+                </td>
+                <td>
+                  {
+                elem.joined ? <p className="mstat member">A member</p> : <p className="mstat notmember">Not a member</p>
+                }
+
+                </td>
                 <td><button type="button" onClick={() => dispatch(join(elem.mission_id))}>Join Mission</button></td>
               </tr>
             ))

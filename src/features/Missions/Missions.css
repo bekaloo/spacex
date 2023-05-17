@@ -23,3 +23,26 @@ td{
     padding: 20px;
     border-left: 1px solid black;
 }
+.mstatus{
+    width: max-content;
+}
+td button{
+    width: max-content;
+}
+
+.mstat{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: max-content;
+    color: white;
+    font-weight: bolder;
+}
+
+.member{
+    background-color: rgb(15, 112, 157);
+}
+
+.notmember{
+    background-color: rgb(70, 72, 72);
+}

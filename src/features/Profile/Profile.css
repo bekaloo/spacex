@@ -13,16 +13,20 @@
     flex-direction: column;
     text-align: start;
     width: 45%;
+    height: fit-content;
 }
 .itemlist{
    all: unset;
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
-   border: 1px solid red;
+   border: 1px solid blue;
+   
 }
 .listitems{
     border: 1px solid black;
     list-style: none;
-    font-size: x-large;
+    font-size: larger;
+    height: auto;
+    padding: 20px;
 }

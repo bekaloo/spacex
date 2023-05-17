@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Rockets.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchRockets } from './rocketSlice';
+import { fetchRockets, reserve } from './rocketSlice';
 
 function Rockets() {
   const comp = useSelector((state) => state.rockets.rockets);
@@ -19,7 +19,7 @@ function Rockets() {
           <div className="rocketDetails">
             <h2 className="rocketName">{elem.rocket_name}</h2>
             <p className="rocketDescription">{elem.rocket_description}</p>
-            <button disabled={elem.reserved} onClick={() => { }} type="button" className="reserveButton">Reserve Rocket</button>
+            <button disabled={elem.reserved} onClick={() => { dispatch(reserve(elem.rocket_id)); }} type="button" className="reserveButton">Reserve Rocket</button>
           </div>
         </div>
       ))

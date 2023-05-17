@@ -5,7 +5,7 @@
 
 .rocketimg {
     height: 150px;
-    /* width: 100px; */
+    /* width: 500px; */
     aspect-ratio: calc(4/3);
 }
 
@@ -28,7 +28,9 @@
     font-size: larger !important;
 }
 
-.rocketDescription {}
+.rocketDescription {
+    max-width: 800px;
+}
 
 .reserveButton {
     all: unset;
@@ -37,6 +39,7 @@
     border-radius: 8px;
     color: white;
     background-color: rgb(24, 66, 165);
+    width: fit-content;
 }
 
 .reserveButton:hover{

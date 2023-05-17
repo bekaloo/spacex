@@ -5,7 +5,6 @@ import { fetchRockets, reserve } from './rocketSlice';
 
 function Rockets() {
   const comp = useSelector((state) => state.rockets.rockets);
-  console.log(comp);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRockets());

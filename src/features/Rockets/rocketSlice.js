@@ -25,7 +25,7 @@ export const rocketSlice = createSlice({
     reserve: (state, action) => {
       state.rockets.map((elem) => {
         if (elem.rocket_id === action.payload) {
-          console.log(elem.rocket_description);
+          console.log(elem.rocket_id === action.payload);
           // elem.reserved = true;
           return { ...elem, reserved: true };
         }

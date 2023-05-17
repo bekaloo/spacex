@@ -28,6 +28,8 @@ td{
 }
 td button{
     width: max-content;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 .mstat{
@@ -45,4 +47,8 @@ td button{
 
 .notmember{
     background-color: rgb(70, 72, 72);
+}
+.leavebtn{
+    border: 2px solid red;
+
 }

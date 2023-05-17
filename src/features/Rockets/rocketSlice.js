@@ -23,20 +23,24 @@ export const rocketSlice = createSlice({
   initialState,
   reducers: {
     reserve: (state, action) => {
-      state.rockets.map((elem) => {
-        if (elem.rocket_id === action.payload) {
-          console.log(elem.rocket_id === action.payload);
-          // elem.reserved = true;
-          return { ...elem, reserved: true };
+      const temp = [];
+      state.rockets.forEach((rocket) => {
+        if (rocket.rocket_id === action.payload) {
+          temp.push({ ...rocket, reserved: !rocket.reserved });
+          // return { ...rocket, reserved: true };
+        } else {
+          temp.push(rocket);
         }
-        return elem;
+        // return rocket;
       });
+      return { ...state, rockets: temp };
     },
+
   },
   extraReducers: (builder) => {
     builder.addCase(fetchRockets.pending, (state) => ({ ...state, loading: true }));
     builder.addCase(fetchRockets.fulfilled, (state, action) => ({
-      ...state, loading: true, rockets: action.payload, error: '',
+      ...state, loading: false, rockets: action.payload, error: '',
     }));
   },
 });

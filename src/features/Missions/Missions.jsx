@@ -5,11 +5,14 @@ import { fetchMissions, join } from './missionSlice';
 
 function Missions() {
   const missions = useSelector((state) => state.missions.missions);
+  const loading = useSelector((state) => state.missions.loading);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (missions.length === 0) dispatch(fetchMissions());
   }, []);
-  return (
+  if (loading) {
+    return <div>Loading...</div>;
+  } return (
     <div className="missions">
       <table cellPadding="0" cellSpacing="0">
         <thead>
@@ -39,7 +42,12 @@ function Missions() {
                 }
 
                 </td>
-                <td><button type="button" onClick={() => dispatch(join(elem.mission_id))}>Join Mission</button></td>
+                <td>
+                  <button className={elem.joined ? 'leavebtn' : 'joinbtn'} type="button" onClick={() => dispatch(join(elem.mission_id))}>
+                    {elem.joined ? 'Leave Mission' : 'Join Mission'}
+                  </button>
+
+                </td>
               </tr>
             ))
           }
